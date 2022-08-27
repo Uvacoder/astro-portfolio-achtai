@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import getGames from "../scripts/ItchioApi";
+
+const games = await getGames();
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<ul>
+			{games.map((el) => <Card game={el} />)}
+		</ul>
+	</main>
+</Layout>
