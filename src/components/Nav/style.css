@@ -1,0 +1,30 @@
+.nav_link + .nav_link {
+    padding-left: 1rem;
+    margin-left: 1rem;
+    position: relative;
+    border-left: 1px solid black;
+  }
+
+  .nav_link{
+    position: relative;
+  }
+
+  .nav_link::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transform:scaleX(0);
+    transition: transform .2s;
+  }
+
+.nav_link + .nav_link::after {
+    left: 1rem;
+  }
+  .nav_link:hover::after,
+  .nav_link-current::after{
+    transform:scaleX(1);
+  }

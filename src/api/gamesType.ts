@@ -1,4 +1,4 @@
-export interface Projects {
+export interface Games {
 	games: Game[]
 }
 
@@ -56,11 +56,4 @@ export interface User {
 export enum Username {
 	Achtaitaipai = 'achtaitaipai',
 	Jjjbon = 'jjjbon',
-}
-
-export default async function getGames() {
-	const response = await fetch(`https://itch.io/api/1/${import.meta.env.ITCHIOKEY}/my-games`)
-	const data = (await response.json()) as Projects
-	const games = data.games.filter((el: any) => el.published)
-	return games
 }
