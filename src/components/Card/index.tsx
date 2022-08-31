@@ -32,14 +32,14 @@ export default function Card({project}:Props){
         return filters.find(el=>el.name===translateTag(classification??''))?.active   
     }
 
-    if(state(classification))return null
+    if(state(classification??''))return null
     return(
         <article data-type={classification} className="projetPreview">
             <a href={`/projets/${title}`} className="projetPreview_link">
                 <h2 className="projetPreview_title">{title}</h2>
                 <div className="projetPreview_imgContainer">
-                    <img className='projetPreview_img' src={cover_url} alt="" width="200" height="158" loading='lazy'/>
-                    <img className="projetPreview_img projetPreview_img-filtered" src={cover_url} alt="" width="200" height="200"loading='lazy' />
+                    <img className='projetPreview_img' src={cover_url} alt="" width="200" height="158" />
+                    <img className="projetPreview_img projetPreview_img-filtered" src={cover_url} alt="" width="200" height="200" />
                 </div>
                 <p className="projetPreview_description">{short_text}</p>
             </a>
