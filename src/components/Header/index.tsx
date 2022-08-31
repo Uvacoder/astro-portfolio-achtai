@@ -1,4 +1,3 @@
-import "./style.css"
 import Nav from "../Nav"
 import ThemeSwitch from '../ThemeSwitch'
 

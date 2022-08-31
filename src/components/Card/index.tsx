@@ -1,4 +1,3 @@
-import './style.scss'
 import {filtersStore}  from '../../stores/filters'
 import { useStore } from '@nanostores/react';
 
@@ -23,19 +22,26 @@ function translateTag(tag:string){
     return translations[tag]??tag
 }
 
+
+
 export default function Card({project}:Props){
     const {title, cover_url, short_text, url, classification}=project
     const filters = useStore(filtersStore)
-    if(!filters.includes(translateTag(classification??'')))return null
+    
+    function state(tag:string){
+        return filters.find(el=>el.name===translateTag(classification??''))?.active   
+    }
+
+    if(state(classification))return null
     return(
-        <article data-type={classification}>
-            <a href={`/projets/${title}`} className="link">
-                <h2 className="title">{title}</h2>
-                <div className="imgContainer">
-                    <img src={cover_url} alt="" width="200" height="158" loading='lazy'/>
-                    <img className="filtered" src={cover_url} alt="" width="200" height="200"loading='lazy' />
+        <article data-type={classification} className="projetPreview">
+            <a href={`/projets/${title}`} className="projetPreview_link">
+                <h2 className="projetPreview_title">{title}</h2>
+                <div className="projetPreview_imgContainer">
+                    <img className='projetPreview_img' src={cover_url} alt="" width="200" height="158" loading='lazy'/>
+                    <img className="projetPreview_img projetPreview_img-filtered" src={cover_url} alt="" width="200" height="200"loading='lazy' />
                 </div>
-                <p className="description">{short_text}</p>
+                <p className="projetPreview_description">{short_text}</p>
             </a>
         </article>
     )

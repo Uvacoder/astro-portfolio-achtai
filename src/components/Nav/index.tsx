@@ -1,5 +1,4 @@
-import { forwardRef, useEffect, useState } from 'react'
-import './style.css'
+import { useEffect, useState } from 'react'
 
 interface Props{
     currentPage:string
@@ -18,7 +17,6 @@ export default function Nav({currentPage}:Props){
         }
         onChange()
         window.addEventListener("navigate",onChange)
-        // return window.removeEventListener("navigate",onChange)
     })
     
 

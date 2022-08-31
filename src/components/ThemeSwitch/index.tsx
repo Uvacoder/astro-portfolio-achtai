@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import "./style.css"
 export default function ThemeSwitch(){
 
     const [checked,setChecked]= useState(false)

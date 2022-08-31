@@ -1,0 +1,94 @@
+.tagList{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+
+.tagList_btn{
+    position: relative;
+    background: none;
+    color:var(--neutral-color);
+    border : 0;
+    outline:0;
+    cursor: 0;
+    cursor: pointer;
+}
+
+.tagList_btn::after{
+    content:"";
+    --rotation:15deg;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10%;
+    height: 1px;
+    background: var(--accent-color);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .2s;
+}
+
+.tagList_btn::before{
+    content:"";
+    --rotation:-15deg;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10%;
+    height: 1px;
+    background: var(--accent-color);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s .1s;
+}
+
+.tagList_btn-active::before, .tagList_btn-active::after{
+    transform: scaleX(1) rotate(var(--rotation));
+}
+
+.filterTag{
+    cursor: pointer;
+}
+
+.filterTag_input{
+    display: none;
+}
+
+.filterTag_input:checked ~ .filterTag_display::after,
+.filterTag_input:checked ~ .filterTag_display::before{
+    transform:scaleX(0);
+
+}
+
+.filterTag_display{
+    position: relative;
+    text-transform: capitalize;
+
+}
+
+.filterTag_display::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10%;
+    height: 1px;
+    background: var(--accent-color);
+    transform-origin: left;
+    transform: scaleX(1) rotate(15deg);
+    transition: transform .2s;
+}
+
+.filterTag_display::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:10%;
+    height: 1px;
+    background: var(--accent-color);
+    transform-origin: right;
+    transform: scaleX(1) rotate(-15deg);
+    transition: transform .2s .1s;
+}

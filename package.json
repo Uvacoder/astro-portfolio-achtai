@@ -11,14 +11,12 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
-    "@astrojs/preact": "^1.0.2",
     "@astrojs/react": "^1.1.0",
     "@types/react": "^18.0.17",
     "astro": "^1.0.9",
     "astro-compress": "^1.0.6",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "sass": "^1.54.5"
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@nanostores/react": "^0.3.0",
