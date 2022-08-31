@@ -1,3 +1,4 @@
+import { forwardRef, useEffect, useState } from 'react'
 import './style.css'
 
 interface Props{
@@ -6,15 +7,25 @@ interface Props{
 
 export default function Nav({currentPage}:Props){
 
-    const currentClassName = (name:string)=>
-        currentPage===name ? 'nav_link nav_link-current':'nav_link'
+    const [location,setLocation]=useState('')
+
+    useEffect(()=>{
+        const onChange = ()=>{
+            const href=window.location.href
+            if(href.includes('apropos'))setLocation('apropos')
+            else if(href.includes('contact'))setLocation('contact')
+            else setLocation('projets')
+        }
+        onChange()
+        window.addEventListener("navigate",onChange)
+        // return window.removeEventListener("navigate",onChange)
+    })
     
 
     return(
         <nav className='nav'>
-            <a className={currentClassName('projets')} href="">Projets</a>
-            <a className={currentClassName('contact')} href="">Contact</a>
-            <a className={currentClassName('apropos')} href="">A propos</a>
+            <a className={'nav_link'+(location==='projets' ? ' nav_link-current':'')} href="/">Projets</a>
+            <a className={'nav_link'+(location==='contact' ? ' nav_link-current':'')} href="/contact">Contact</a>
         </nav>
     )
 }

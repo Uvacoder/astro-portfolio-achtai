@@ -9,10 +9,11 @@
     transform:scaleX(0);
 
 }
+
 .filter_display{
     position: relative;
-    pointer-events: none;
     text-transform: capitalize;
+
 }
 
 .filter_display::after{

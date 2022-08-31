@@ -1,5 +1,5 @@
 article{
-    background: var(--surface-1);
+    background: var(--surface-2);
     width: 18em;
     box-shadow: var(--shadow-1);
     &:hover{
@@ -7,6 +7,7 @@ article{
         .filtered{
             clip-path: circle(0%);
             // opacity:0;
+            transition-delay: 0s;
         }
         .title{
             color:var(--accent-color)
@@ -37,10 +38,13 @@ article{
         filter: url(#filter);
         clip-path: circle(100%);
         // opacity:1;
-        transition: clip-path .2s ease-out;
+        transition: clip-path .3s ease-out;
+        transition-delay: .2s;
     }
     img{
         display: block;
+        width: 200px;
+        height: 158px;;
     }
 }
 

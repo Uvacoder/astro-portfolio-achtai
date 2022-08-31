@@ -1,8 +1,16 @@
 :root{
 	--font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
 
-	--surface-1:var(--oc-gray-0);
-	--surface-1:var(--oc-gray-2);
+	--surface-1-light:var(--oc-gray-0);
+	--surface-2-light:var(--oc-gray-2);
+	--accent-color-light:var(--oc-indigo-9);
+	--neutral-color-light:var(--oc-gray-9);
+
+	--surface-1-dark:var(--oc-gray-9);
+	--surface-2-dark:var(--oc-gray-8);
+	--neutral-color-dark:var(--oc-gray-3);
+	--accent-color-dark:var(--oc-indigo-3);
+
 	--shadow-1:0px 2px 2px 0px hsla(0,0%,0%,0.14), 
 	0px 3px 1px -2px hsla(0,0%,0%,0.12), 
 	0px 1px 5px 0px hsla(0,0%,0%,0.2);
@@ -11,8 +19,41 @@
 	0px 1px 10px 0px hsla(0,0%,0%,0.12), 
 	0px 2px 4px -1px hsla(0,0%,0%,0.2);
 
-	--accent-color:var(--oc-indigo-9);
-	--neutral-color:var(--oc-gray-9);
+
+	--full-width:min(80em,95%);
+
+	--medium-width:clamp(20rem, 40vw, 30rem);
+
+}
+
+html{
+	--surface-1:var(--surface-1-light);
+	--surface-2:var(--surface-2-light);
+	--neutral-color:var(--neutral-color-light);
+	--accent-color:var(--accent-color-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		--surface-1:var(--surface-1-dark);
+		--surface-2:var(--surface-2-dark);
+		--neutral-color:var(--neutral-color-dark);
+		--accent-color:var(--accent-color-dark);
+	}
+}
+
+[theme="dark"]{
+	--surface-1:var(--surface-1-dark);
+	--surface-2:var(--surface-2-dark);
+	--neutral-color:var(--neutral-color-dark);
+	--accent-color:var(--accent-color-dark);
+}
+
+[theme="light"]{
+	--surface-1:var(--surface-1-light);
+	--surface-2:var(--surface-2-light);
+	--neutral-color:var(--neutral-color-light);
+	--accent-color:var(--accent-color-light);
 }
 
 *{

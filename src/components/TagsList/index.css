@@ -2,5 +2,6 @@
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap:2rem;
+    gap:1rem;
+    color:var(--neutral-color)
 }

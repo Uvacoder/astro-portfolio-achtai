@@ -33,6 +33,7 @@ export interface Game {
 export enum Classification {
 	Game = 'game',
 	Tool = 'tool',
+	Site = 'sites',
 }
 
 export interface Embed {

@@ -2,7 +2,7 @@
     padding-left: 1rem;
     margin-left: 1rem;
     position: relative;
-    border-left: 1px solid black;
+    border-left: 1px solid var(--neutral-color);
   }
 
   .nav_link{
@@ -24,7 +24,12 @@
 .nav_link + .nav_link::after {
     left: 1rem;
   }
-  .nav_link:hover::after,
+
   .nav_link-current::after{
     transform:scaleX(1);
+}
+
+
+.nav_link:hover{
+    color:var(--accent-color);
   }

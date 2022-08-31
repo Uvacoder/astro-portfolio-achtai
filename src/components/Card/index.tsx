@@ -2,6 +2,7 @@ import './style.scss'
 import {filtersStore}  from '../../stores/filters'
 import { useStore } from '@nanostores/react';
 
+
 interface Project{
     title:string
     cover_url?:string
@@ -28,10 +29,10 @@ export default function Card({project}:Props){
     if(!filters.includes(translateTag(classification??'')))return null
     return(
         <article data-type={classification}>
-            <a href={`/projets/${title}`} target="_blank" className="link">
+            <a href={`/projets/${title}`} className="link">
                 <h2 className="title">{title}</h2>
                 <div className="imgContainer">
-                    <img src={cover_url} alt="" width="200" height="200" loading='lazy'/>
+                    <img src={cover_url} alt="" width="200" height="158" loading='lazy'/>
                     <img className="filtered" src={cover_url} alt="" width="200" height="200"loading='lazy' />
                 </div>
                 <p className="description">{short_text}</p>
