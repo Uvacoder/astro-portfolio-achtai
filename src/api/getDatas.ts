@@ -31,6 +31,12 @@ export default async function getProjets() {
   projetsJson.forEach(localReplaceImgs);
   itchGames.forEach(remoteReplaceImgs);
   projets = [...itchGames, ...projetsJson] as Game[];
+  projets=projets.sort((a,b)=>{
+	const date1 = new Date(a.created_at??0)
+	console.log(a.title,date1,a.created_at)
+	const date2 = new Date(b.created_at??0)
+	return date2.getTime() - date1.getTime()
+})
 
   return projets;
 }
