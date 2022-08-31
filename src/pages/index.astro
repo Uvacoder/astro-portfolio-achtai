@@ -20,32 +20,3 @@ const projets = (await getProjets())
 		<SvgFilter/>
 	</main>
 </Layout>
-
-<style>
-	.main{
-		width:var(--full-width);
-		margin: auto;
-	}
-	.projectsWrapper{
-		display: grid;
-		justify-items: center;
-		padding-block: 2rem ;
-		gap: 2rem 0;
-	}
-	@media (min-width: 40em) { 
-		.projectsWrapper{
-			grid-template-columns: repeat(2,1fr);
-		}
-	 }
-	 @media (min-width: 60em) { 
-		.projectsWrapper{
-			grid-template-columns: repeat(3,1fr);
-		}
-	 }
-	 @media (min-width: 80em) { 
-		.projectsWrapper{
-			grid-template-columns: repeat(4,1fr);
-		}
-	 }
-
-</style>
