@@ -29,17 +29,5 @@ const { title,pageCategory } = Astro.props as Props;
     <main class="main">
       <slot />
     </main>
-
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
