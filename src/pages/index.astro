@@ -1,23 +1,17 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import SvgFilter from "../components/SvgFilter.astro";
-import Card from "../components/Card";
-import TagsList from "../components/TagsList";
-import Header from "../components/Header";
-import type { Game } from "../api/gamesType";
 import getProjets from "../api/getDatas";
+import Card from "../components/Card";
+import SvgFilter from "../components/SvgFilter.astro";
+import TagsList from "../components/TagsList";
+import Layout from "../layouts/Layout.astro";
 
 const projets = await getProjets();
 ---
 
-<Layout title="Achtaitaipai | Accueil">
-  <Header currentPage="projets" client:load />
-  <main class="main">
+<Layout title="Achtaitaipai | Accueil" pageCategory="projets">
     <TagsList client:load />
     <div class="projectsWrapper">
       {projets.map((el) => <Card project={el} client:load />)}
     </div>
     <SvgFilter />
-  </main>
 </Layout>
-

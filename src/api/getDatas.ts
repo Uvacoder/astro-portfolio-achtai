@@ -8,7 +8,6 @@ async function localReplaceImgs(game: Game) {
   const src = "/assets/imgs/" + game.cover_url!;
   const img = await getImage({ src, width: 315, height: 250 });
   if (img.src) game.cover_url = img.src;
-  console.log(game.cover_url);
 }
 
 async function remoteReplaceImgs(game: Game) {
@@ -22,7 +21,6 @@ async function remoteReplaceImgs(game: Game) {
     });
     if (img.src) game.cover_url = img.src;
   }
-  console.log(game.cover_url);
 }
 
 export default async function getProjets() {
@@ -31,12 +29,11 @@ export default async function getProjets() {
   projetsJson.forEach(localReplaceImgs);
   itchGames.forEach(remoteReplaceImgs);
   projets = [...itchGames, ...projetsJson] as Game[];
-  projets=projets.sort((a,b)=>{
-	const date1 = new Date(a.created_at??0)
-	console.log(a.title,date1,a.created_at)
-	const date2 = new Date(b.created_at??0)
-	return date2.getTime() - date1.getTime()
-})
+  projets = projets.sort((a, b) => {
+    const date1 = new Date(a.created_at ?? 0);
+    const date2 = new Date(b.created_at ?? 0);
+    return date2.getTime() - date1.getTime();
+  });
 
   return projets;
 }

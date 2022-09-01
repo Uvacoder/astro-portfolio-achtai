@@ -1,7 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/Header";
 import getProjets from "../../api/getDatas";
+import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const projets = await getProjets()
@@ -18,16 +17,13 @@ const projetsDatas =await getProjets()
 const datas = projetsDatas.find(el=>el.title===projet)!
 ---
 
-<Layout title={'Achtaitaipai | '+projet}>
-  <Header currentPage="projets" client:load/>
-  <main>
+<Layout title={'Achtaitaipai | '+projet} pageCategory="projets">
     <div class="projectResume">
       <h2 class="projectResume_title">{datas.title}</h2>
       <img src={datas.cover_url} width="315" height="250" class="projectResume_img"/>
       <a href={datas.url} target="_blank" class="projectResume_link">{datas.classification === 'game' ? 'Jouer' : 'Visiter'}</a>
       <p class="projectResume_description">{datas.short_text}</p>
     </div>
-  </main>
 </Layout>
 
 <style>

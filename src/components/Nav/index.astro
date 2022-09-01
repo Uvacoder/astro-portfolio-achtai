@@ -1,0 +1,11 @@
+---
+export interface Props{
+    currentPage:string
+}
+
+const {currentPage} = Astro.props as Props
+---
+        <nav class='nav'>
+            <a class={'nav_link'+(currentPage==='projets' ? ' nav_link-current':'')} href="/">Projets</a>
+            <a class={'nav_link'+(currentPage==='contact' ? ' nav_link-current':'')} href="/contact">Contact</a>
+        </nav>

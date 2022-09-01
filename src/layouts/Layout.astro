@@ -1,32 +1,31 @@
 ---
-import "../style/style.css";
 import "open-color/open-color.css";
+import Header from "../components/Header/index.astro";
+import "../style/style.css";
 export interface Props {
-	title: string;
+  title: string
+  pageCategory:string
 }
 
-const { title } = Astro.props as Props;
-
-const spaOptions = {
-	scrollIntoView: false,
-	containerSelector: "main",
-};
+const { title,pageCategory } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Des jeux, des outils et autres bidules. Les bricolages numériques d'Achtaitaipai">
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-		<script>
-			const theme = localStorage.getItem("theme");
-			if (theme) document.firstElementChild?.setAttribute("theme", theme);
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Des jeux, des outils et autres bidules. Les bricolages numériques d'Achtaitaipai"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header pageCategory={pageCategory} />
+    <main class="main">
+      <slot />
+    </main>
+  </body>
 </html>

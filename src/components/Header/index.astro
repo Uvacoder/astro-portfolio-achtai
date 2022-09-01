@@ -1,0 +1,17 @@
+---
+import Nav from "../Nav/index.astro";
+import ThemeSwitch from "../ThemeSwitch";
+export interface Props {
+  pageCategory: string;
+}
+
+const { pageCategory } = Astro.props as Props;
+---
+
+<header class="header">
+  <a href="/" class="header_link">
+    <h1 class="header_title">Achtaitaipai</h1>
+  </a>
+  <Nav currentPage={pageCategory} />
+  <ThemeSwitch client:load />
+</header>

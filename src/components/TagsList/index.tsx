@@ -15,12 +15,15 @@ export default function TagList() {
   }
 
   return (
-    <ul className="tagList">
+    <ul className="tagList" role="list">
       {btnsStates.map((el, i) => (
         <li key={i}>
           <button
             className={"tagList_btn" + (el.active ?" tagList_btn-active":"")}
+            role="switch"
+            aria-checked={el.active}
             onClick={() => handleClick(el.name)}
+            title={'filters '+el.name}
           >
             {el.name}
           </button>
@@ -29,26 +32,3 @@ export default function TagList() {
     </ul>
   );
 }
-
-// export default function TagsList(){
-
-//     const filters = useStore(filtersStore)
-//     const setValue = (tag:string)=>{
-//         if(filters.includes(tag)){
-//             filtersStore.set(filters.filter(el=>el!==tag))
-
-//         }
-//         else
-//             filtersStore.set([...filters,tag])
-//     }
-
-//     return(
-//     <ul className="tagList">
-//             {filtersLabel.map((el,i)=>(
-//                 <li key={i}>
-//                     <Tag title={el} value={filters} setValue={()=>setValue(el)}/>
-//                 </li>
-//             ))}
-//     </ul>
-//     )
-// }

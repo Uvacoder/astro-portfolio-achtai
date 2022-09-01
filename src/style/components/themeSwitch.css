@@ -1,32 +1,57 @@
 .themeSwitch {
+  --sun-scale: 1;
+  --sun-stroke: currentColor;
+  --sun-rot: 0;
+  --moon-scale: 0;
+  --moon-rot: 90deg;
+  color: var(--oc-yellow-5);
   position: absolute;
   right: 1rem;
-  top: .5rem;
+  top: 0.5rem;
   line-height: 0;
   background-color: transparent;
   border: 0;
-  color: var(--oc-indigo-7);
   cursor: pointer;
 }
-[data-theme="light"] {
-  color: var(--oc-yellow-6);
-}
-.themeSwitch_icon {
-  transition: transform 0.3s, color 0.5s;
-  image-rendering: crisp-edges;
-}
-[data-theme="light"] .themeSwitch_icon-sun {
-  transform: scale(1) rotate(45deg);
-  stroke: currentColor;
+
+@media (prefers-color-scheme: dark) {
+  .themeSwitch {
+    --sun-scale: 1;
+    --sun-stroke: currentColor;
+    --sun-rot: 0;
+    --moon-scale: 0;
+    --moon-rot: 90deg;
+    color: var(--oc-yellow-5);
+  }
 }
 
-[data-theme="light"] .themeSwitch_icon-moon {
-  transform: scale(0) rotate(45deg);
+[theme="light"] .themeSwitch {
+  --sun-scale: 1;
+  --sun-stroke: currentColor;
+  --sun-rot: 0;
+  --moon-scale: 0;
+  --moon-rot: 90deg;
+  color: var(--oc-yellow-5);
+}
+
+[theme="dark"] .themeSwitch {
+  --sun-scale: 0;
+  --sun-rot: 0;
+  --sun-stroke: none;
+  --moon-scale: 1;
+  --moon-rot: 0;
+  color: var(--oc-indigo-9);
+}
+
+.themeSwitch_icon {
+  transition: transform 0.3s, color 0.5s;
 }
 .themeSwitch_icon-sun {
-  transform: scale(0);
+  transform: scale(var(--sun-scale)) rotate(var(--sun-rot));
+  stroke: var(--sun-stroke);
 }
 .themeSwitch_icon-moon {
   position: absolute;
   left: 0;
+  transform: scale(var(--moon-scale)) rotate(var(--moon-rot));
 }

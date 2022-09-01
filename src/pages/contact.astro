@@ -1,12 +1,9 @@
 ---
-import Header from "../components/Header";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
-<Layout title="Achtaitaipai | Contact">
-	<Header currentPage="contact" client:load/>
-	<main class="main">
+<Layout title="Achtaitaipai | Contact" pageCategory="contact">
 		<div class="contactCard">
 			<h2 class="contactCard_title">contact</h2>
 			<ul class="contactCard_list">
@@ -23,5 +20,4 @@ import Layout from "../layouts/Layout.astro";
 					mon réseau social préféré</a></li>
 			</ul>
 		</div>
-	</main>
 </Layout>
