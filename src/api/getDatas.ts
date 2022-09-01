@@ -1,6 +1,5 @@
 import type { Game, Games } from "./gamesType";
 import { getImage } from "@astrojs/image";
-import projetsJson from "../assets/datas.json";
 
 let projets: Game[] | undefined;
 
@@ -23,12 +22,12 @@ async function remoteReplaceImgs(game: Game) {
   }
 }
 
-export default async function getProjets() {
+export default async function getProjets(markdownProjets:Game[]) {
   if (projets) return projets;
   const itchGames = await getItchGames();
-  projetsJson.forEach(localReplaceImgs);
+  markdownProjets.forEach(localReplaceImgs);
   itchGames.forEach(remoteReplaceImgs);
-  projets = [...itchGames, ...projetsJson] as Game[];
+  projets = [...itchGames,...markdownProjets] as Game[];
   projets = projets.sort((a, b) => {
     const date1 = new Date(a.created_at ?? 0);
     const date2 = new Date(b.created_at ?? 0);

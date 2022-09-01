@@ -1,11 +1,15 @@
 ---
+import type { Game } from "../api/gamesType";
 import getProjets from "../api/getDatas";
 import Card from "../components/Card";
 import SvgFilter from "../components/SvgFilter.astro";
 import TagsList from "../components/TagsList";
 import Layout from "../layouts/Layout.astro";
 
-const projets = await getProjets();
+const markdownProjets = (await Astro.glob('../pages/projets/*.md')).map(el=>el.frontmatter)as Game[]
+const projets = await getProjets(markdownProjets);
+
+
 ---
 
 <Layout title="Achtaitaipai | Accueil" pageCategory="projets">

@@ -2,19 +2,30 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 # when using the default proxy server port
-# local_backend: true
-media_folder: "public/imgs/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/imgs/uploads" # The src attribute for uploaded media will begin with /images/uploads
+local_backend: true
+media_folder: "src/assets/imgs" # Media files will be stored in the repo under static/images/uploads
+public_folder: "" # The src attribute for uploaded media will begin with /images/uploads
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "src/pages/blog" # The path to the folder where the documents are stored
+  - name: "projets" # Used in routes, e.g., /admin/collections/blog
+    label: "Projets" # Used in the UI
+    folder: "src/pages/projets" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/Blog.astro"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "draft", name: "draft", widget: "hidden", default: "true"}
+      - {label: "public", name: "published", widget: "boolean", default: "true"}
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Url", name: "url", widget: "string"}
+      - {label: "Description courte", name: "short_text", widget: "string"}
+      - {label: "Publish Date", name: "created_at", widget: "datetime"}
+      - label: "Classification"
+        name: "classification"
+        widget: "select"
+        options:
+          - { label: "sites", value: "sites" }
+          - { label: "jeux", value: "game" }
+          - { label: "outils", value: "tool" }
+          - { label: "blabla", value: "blabla" }
+      - {label: "Image de couverture", name: "cover_url", widget: "image"}
+      # - {label: "Body", name: "body", widget: "markdown", required: false}
