@@ -1,43 +1,32 @@
-.themeSwitch{
-    position: absolute;
-    right: 0;
-    top: 0;
+.themeSwitch {
+  position: absolute;
+  right: 1rem;
+  top: .5rem;
+  line-height: 0;
+  background-color: transparent;
+  border: 0;
+  color: var(--oc-indigo-7);
+  cursor: pointer;
 }
-.themeSwitch_input{
-    display: none;
+[data-theme="light"] {
+  color: var(--oc-yellow-6);
 }
-
-.themeSwitch_display{
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    width: 2.2rem;
-    height: 1rem;
-    background-color: var(--oc-gray-4);
-    /* outline: 1px solid var(--neutral-color); */
-    transition: background-color .1s;
-    border-radius: 1rem;
-    outline: 1px solid var(--oc-gray-4);
+.themeSwitch_icon {
+  transition: transform 0.3s, color 0.5s;
+  image-rendering: crisp-edges;
 }
-
-.themeSwitch_display::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-    background-color: var(--surface-1);
-    transition: background-color .1s, left .2s;
+[data-theme="light"] .themeSwitch_icon-sun {
+  transform: scale(1) rotate(45deg);
+  stroke: currentColor;
 }
 
-.themeSwitch_input:checked ~ .themeSwitch_display{
-    background-color: var(--oc-gray-9);
+[data-theme="light"] .themeSwitch_icon-moon {
+  transform: scale(0) rotate(45deg);
 }
-
-.themeSwitch_input:checked ~ .themeSwitch_display::after{
-    background-color: var(--accent-color);
-    left:calc(100% - 1rem)
+.themeSwitch_icon-sun {
+  transform: scale(0);
+}
+.themeSwitch_icon-moon {
+  position: absolute;
+  left: 0;
 }
