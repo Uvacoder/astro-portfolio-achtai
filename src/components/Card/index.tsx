@@ -38,8 +38,8 @@ export default function Card({project}:Props){
             <a href={`/projets/${title}`} className="projetPreview_link">
                 <h2 className="projetPreview_title">{title}</h2>
                 <div className="projetPreview_imgContainer">
-                    <img className='projetPreview_img' src={cover_url} alt="" width="200" height="158" />
-                    <img className="projetPreview_img projetPreview_img-filtered" src={cover_url} alt="" width="200" height="158" />
+                    <img className='projetPreview_img' src={cover_url} aria-hidden="true" width="200" height="158" />
+                    <img className="projetPreview_img projetPreview_img-filtered" src={cover_url} aria-hidden="true" width="200" height="158" />
                 </div>
                 <p className="projetPreview_description">{short_text}</p>
             </a>

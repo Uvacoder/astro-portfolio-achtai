@@ -2,10 +2,12 @@
     background: var(--surface-2);
     width: 18em;
     box-shadow: var(--shadow-1);
+    transition: transform .2s;
 }
 
 .projetPreview:hover{
     box-shadow: var(--shadow-2);
+    transform: translateY(-0.3rem);
 }
 .projetPreview:hover .projetPreview_img-filtered{
     clip-path: circle(0%);
