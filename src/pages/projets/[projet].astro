@@ -20,7 +20,7 @@ const datas = projetsDatas.find(el=>el.title===projet)!
 <Layout title={'Achtaitaipai | '+projet} pageCategory="projets">
     <div class="projectResume">
       <h2 class="projectResume_title">{datas.title}</h2>
-      <img src={datas.cover_url} width="315" height="250" class="projectResume_img"/>
+      <img src={datas.cover_url} width="315" height="250" class="projectResume_img" aria-hidden="true"/>
       <a href={datas.url} target="_blank" class="projectResume_link">{datas.classification === 'game' ? 'Jouer' : 'Visiter'}</a>
       <p class="projectResume_description">{datas.short_text}</p>
     </div>
