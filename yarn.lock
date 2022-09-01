@@ -2612,6 +2612,11 @@ open-color@^1.9.1:
   resolved "https://registry.yarnpkg.com/open-color/-/open-color-1.9.1.tgz#a6e6328f60eff7aa60e3e8fcfa50f53ff3eece35"
   integrity sha512-vCseG/EQ6/RcvxhUcGJiHViOgrtz4x0XbZepXvKik66TMGkvbmjeJrKFyBEx6daG5rNyyd14zYXhz0hZVwQFOw==
 
+open-props@^1.4.14:
+  version "1.4.14"
+  resolved "https://registry.yarnpkg.com/open-props/-/open-props-1.4.14.tgz#22700be376a14518fe9657969cb5999ed12d960b"
+  integrity sha512-EkTUczMzty8mIvnWGpC41ELIejARiuljsXTEz7YDRKJn5dJ1/njsLTpNhn2rsM3JSW95p4G94ojsgzxbaiFmNA==
+
 ora@^6.1.0:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/ora/-/ora-6.1.2.tgz#7b3c1356b42fd90fb1dad043d5dbe649388a0bf5"
@@ -2755,6 +2760,13 @@ pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
+
+postcss-jit-props@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/postcss-jit-props/-/postcss-jit-props-1.0.7.tgz#9d47e79399d7a376e2535edcdb3016bc7b3f8630"
+  integrity sha512-qxt6FxbBwTsHDMhzoTclrT0muWCSF0iT6TfCBssj5MYB0Txx1c6r27OKqjxlg9oE+ubEbrlN1VYmOPiBMtzhow==
+  dependencies:
+    tiny-glob "^0.2.9"
 
 postcss-load-config@^3.1.4:
   version "3.1.4"

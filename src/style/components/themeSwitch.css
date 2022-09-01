@@ -4,7 +4,6 @@
   --sun-rot: 0;
   --moon-scale: 0;
   --moon-rot: 90deg;
-  color: var(--oc-yellow-5);
   position: absolute;
   right: 1rem;
   top: 0.5rem;
@@ -12,6 +11,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  color:var(--neutral-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +21,6 @@
     --sun-rot: 0;
     --moon-scale: 0;
     --moon-rot: 90deg;
-    color: var(--oc-yellow-5);
   }
 }
 
@@ -31,7 +30,6 @@
   --sun-rot: 0;
   --moon-scale: 0;
   --moon-rot: 90deg;
-  color: var(--oc-yellow-5);
 }
 
 [theme="dark"] .themeSwitch {
@@ -40,11 +38,11 @@
   --sun-stroke: none;
   --moon-scale: 1;
   --moon-rot: 0;
-  color: var(--oc-indigo-9);
 }
 
 .themeSwitch_icon {
   transition: transform 0.3s, color 0.5s;
+  color:currentColor;
 }
 .themeSwitch_icon-sun {
   transform: scale(var(--sun-scale)) rotate(var(--sun-rot));

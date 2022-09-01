@@ -1,13 +1,13 @@
 ---
-import "open-color/open-color.css";
+// import "open-color/open-color.css";
 import Header from "../components/Header/index.astro";
 import "../style/style.css";
 export interface Props {
-  title: string
-  pageCategory:string
+  title: string;
+  pageCategory: string;
 }
 
-const { title,pageCategory } = Astro.props as Props;
+const { title, pageCategory } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -21,8 +21,20 @@ const { title,pageCategory } = Astro.props as Props;
       content="Des jeux, des outils et autres bidules. Les bricolages numériques d'Achtaitaipai"
     />
     <title>{title}</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <script
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+      defer
+    ></script>
 
+    <script is:inline>
+      //set thme before page load 
+      var theme = localStorage.getItem("theme");
+      function setTheme() {
+        if (theme==='light'||theme==='dark') document.firstElementChild.setAttribute("theme", theme);
+      }
+      setTheme();
+      window.onload = setTheme;
+    </script>
   </head>
   <body>
     <Header pageCategory={pageCategory} />

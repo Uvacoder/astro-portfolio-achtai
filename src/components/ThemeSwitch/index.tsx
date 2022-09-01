@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 export default function ThemeSwitch() {
-  const [dark, setDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   const handleChange = () => {
-    setDark(!dark);
-    setTheme(dark ? "light" : "dark");
+    setIsDark(!isDark);
+    setTheme(isDark ? "light" : "dark");
   };
 
   const setTheme = (theme: string) => {
@@ -12,25 +12,23 @@ export default function ThemeSwitch() {
     localStorage.setItem("theme", theme);
   };
 
+  function onMediaChange(event: MediaQueryListEvent) {
+    const theme = event.matches ? "dark" : "light";
+    setIsDark(theme === "dark");
+    setTheme(theme);
+  }
+
   useEffect(() => {
     const theme = localStorage.getItem("theme");
     if (theme) {
-      setDark(theme === "dark");
-      setTheme(theme);
+      setIsDark(theme === "dark");
     }
     if (
       !theme &&
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
-      setDark(true);
-      setTheme("dark");
-    }
-
-    function onMediaChange(event: MediaQueryListEvent) {
-      const theme = event.matches ? "dark" : "light";
-      setDark(theme === "dark");
-      setTheme(theme);
+      setIsDark(true);
     }
 
     window
@@ -40,9 +38,16 @@ export default function ThemeSwitch() {
     return window
       .matchMedia("(prefers-color-scheme: dark)")
       .removeEventListener("change", onMediaChange);
-  });
+  }, []);
+
   return (
-    <button className="themeSwitch" title="Toggles dark theme" role="switch" aria-checked={dark} onClick={handleChange}>
+    <button
+      className="themeSwitch"
+      title="Toggles dark theme"
+      role="switch"
+      aria-checked={isDark}
+      onClick={handleChange}
+    >
       <svg
         className="themeSwitch_icon themeSwitch_icon-sun"
         xmlns="http://www.w3.org/2000/svg"

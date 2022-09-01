@@ -1,12 +1,12 @@
 .projetPreview{
     background: var(--surface-2);
     width: 18em;
-    box-shadow: var(--shadow-1);
+    box-shadow: var(--shadow-4);
     transition: transform .2s;
 }
 
 .projetPreview:hover{
-    box-shadow: var(--shadow-2);
+    box-shadow: var(--shadow-5);
     transform: translateY(-0.3rem);
 }
 .projetPreview:hover .projetPreview_img-filtered{
