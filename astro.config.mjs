@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
 import image from "@astrojs/image";
-
 import compress from "astro-compress";
+
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), image(), compress()]
+  integrations: [image(), compress(), preact()]
 });

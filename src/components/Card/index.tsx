@@ -1,7 +1,6 @@
 import { filtersStore } from "../../stores/filters";
-import { useStore } from "@nanostores/react";
-import { useCallback, useEffect, useRef } from "react";
-
+import { useStore } from "@nanostores/preact";
+import {useRef,useCallback,useEffect} from 'preact/hooks'
 interface Project {
   title: string;
   cover_url?: string;

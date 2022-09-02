@@ -1,5 +1,5 @@
-import { useStore } from "@nanostores/react";
-import { filtersStore, filtersLabel } from "../../stores/filters";
+import { useStore } from "@nanostores/preact";
+import { filtersStore } from "../../stores/filters";
 
 export default function TagList() {
 

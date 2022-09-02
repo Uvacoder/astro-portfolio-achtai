@@ -12,17 +12,16 @@
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
-    "@astrojs/react": "^1.1.0",
-    "@types/react": "^18.0.17",
+    "@astrojs/preact": "^1.0.2",
+    "@types/react": "^18.0.18",
     "astro": "^1.0.9",
     "astro-compress": "^1.0.6",
     "open-props": "^1.4.14",
     "postcss-jit-props": "^1.0.7",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "preact": "^10.6.5"
   },
   "dependencies": {
-    "@nanostores/react": "^0.3.0",
+    "@nanostores/preact": "^0.2.1",
     "nanostores": "^0.6.0"
   }
 }
