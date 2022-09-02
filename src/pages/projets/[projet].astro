@@ -1,19 +1,22 @@
 ---
+import type { Game } from "../../api/gamesType";
 import getProjets from "../../api/getDatas";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const projets = await getProjets()
+const markdownProjets = (await Astro.glob('./*.md')).map(el=>el.frontmatter)as Game[]
+  const projets = await getProjets(markdownProjets)
   
   return (
     projets.map(game=>({
       params:{projet:game.title}
     }))
-  )
-}
-
+    )
+  }
+  
+const markdownProjets = (await Astro.glob('./*.md')).map(el=>el.frontmatter)as Game[]
 const {projet}=Astro.params
-const projetsDatas =await getProjets()
+const projetsDatas =await getProjets(markdownProjets)
 const datas = projetsDatas.find(el=>el.title===projet)!
 ---
 

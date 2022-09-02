@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 export default function ThemeSwitch() {
   const [isDark, setIsDark] = useState(false);
 
@@ -12,33 +12,26 @@ export default function ThemeSwitch() {
     localStorage.setItem("theme", theme);
   };
 
-  function onMediaChange(event: MediaQueryListEvent) {
+  const onMediaThemeChange = useCallback((event: MediaQueryListEvent) => {
     const theme = event.matches ? "dark" : "light";
     setIsDark(theme === "dark");
     setTheme(theme);
-  }
+  }, [setIsDark,setTheme]);
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme) {
-      setIsDark(theme === "dark");
-    }
-    if (
-      !theme &&
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    if (theme) setIsDark(theme === "dark");
+    else if (window.matchMedia("(prefers-color-scheme: dark)")?.matches)
       setIsDark(true);
-    }
 
     window
       .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", onMediaChange);
+      .addEventListener("change", onMediaThemeChange);
 
     return window
       .matchMedia("(prefers-color-scheme: dark)")
-      .removeEventListener("change", onMediaChange);
-  }, []);
+      .removeEventListener("change", onMediaThemeChange);
+  }, [setIsDark,onMediaThemeChange]);
 
   return (
     <button

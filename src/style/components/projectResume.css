@@ -1,29 +1,30 @@
-.projectResume{
-    width:var(--medium-width);
-    margin: auto;
-    background-color: var(--surface-2);
-    padding: 1rem 2rem;
-    box-shadow:var(--shadow-4);
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-    justify-content: center;
-    align-items: center;
-  }
+.projectResume {
+  width: min(100%, var(--size-fluid-10));
+  margin: auto;
+  background-color: var(--surface-2);
+  padding: var(--size-5) var(--size-7);
+  box-shadow: var(--shadow-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-3);
+  justify-content: center;
+  align-items: center;
+}
 
-  .projectResume_title{
-    color:var(--neutral-color);
-    font-size: 1.5rem;
-  }
+.projectResume_title {
+  color: var(--neutral-color);
+  font-size: var(--font-size-4);
+}
 
-  .projectResume_img{
-    width: 315px;
-    height: 250px;
-  }
-  .projectResume_description{
-    color:var(--neutral-color);
-  }
+.projectResume_img {
+  width: min(315px, 100%);
+  height: auto;
+  aspect-ratio: 1.26;
+}
+.projectResume_description {
+  color: var(--neutral-color);
+}
 
-  .projectResume_link{
-    color:var(--accent-color);
-  }
+.projectResume_link {
+  color: var(--accent-color);
+}

@@ -15,7 +15,7 @@ const projets = await getProjets(markdownProjets);
 <Layout title="Achtaitaipai | Accueil" pageCategory="projets">
     <TagsList client:load />
     <div class="projectsWrapper">
-      {projets.map((el) => <Card project={el} client:load />)}
+      {projets.map(el => <Card project={el} client:load/>)}
     </div>
     <SvgFilter />
 </Layout>

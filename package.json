@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
@@ -22,7 +23,6 @@
   },
   "dependencies": {
     "@nanostores/react": "^0.3.0",
-    "nanostores": "^0.6.0",
-    "open-color": "^1.9.1"
+    "nanostores": "^0.6.0"
   }
 }

@@ -1,7 +1,4 @@
 :root {
-  --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace,
-    SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
-
   --surface-1-light: var(--gray-0);
   --surface-2-light: var(--gray-2);
   --neutral-color-light: var(--gray-9);
@@ -17,13 +14,6 @@
   --warning-color-dark: var(--red-3);
   --surface-shadow-dark: 200 50% 3%;
   --shadow-strength-dark: 80%;
-
-  --full-width: min(80em, 95%);
-  --medium-width: clamp(20rem, 40vw, 30rem);
-
-  --fz-s: 1rem;
-  --fz-m: 1.5rem;
-  --fz-l: 2rem;
 }
 
 html {

@@ -1,25 +1,12 @@
-.main{
-    width:var(--full-width);
-    margin: auto;
+.main {
+  margin-inline: var(--size-fluid-2);
 }
-.projectsWrapper{
-    display: grid;
-    justify-items: center;
-    padding-block: 2rem ;
-    gap: 2rem 0;
+.projectsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 18rem);
+  justify-content: space-around;
+  margin-block: var(--size-7);
+  justify-items: center;
+  gap: var(--size-7) var(--size-3);
+  perspective: 1000px;
 }
-@media (min-width: 40em) { 
-    .projectsWrapper{
-        grid-template-columns: repeat(2,1fr);
-    }
- }
- @media (min-width: 60em) { 
-    .projectsWrapper{
-        grid-template-columns: repeat(3,1fr);
-    }
- }
- @media (min-width: 80em) { 
-    .projectsWrapper{
-        grid-template-columns: repeat(4,1fr);
-    }
- }

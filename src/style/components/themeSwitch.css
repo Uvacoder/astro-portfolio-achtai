@@ -5,13 +5,18 @@
   --moon-scale: 0;
   --moon-rot: 90deg;
   position: absolute;
-  right: 1rem;
+  right: var(--size-fluid-1);
   top: 0.5rem;
   line-height: 0;
   background-color: transparent;
   border: 0;
   cursor: pointer;
   color:var(--neutral-color);
+  opacity: 0.8;
+}
+
+.themeSwitch:hover{
+  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,7 +46,7 @@
 }
 
 .themeSwitch_icon {
-  transition: transform 0.3s, color 0.5s;
+  transition: transform 0.3s var(--ease-squish-2), color 0.5s;
   color:currentColor;
 }
 .themeSwitch_icon-sun {

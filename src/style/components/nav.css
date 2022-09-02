@@ -1,6 +1,6 @@
 .nav_link + .nav_link {
-  padding-left: 1rem;
-  margin-left: 1rem;
+  padding-left: var(--size-3);
+  margin-left: calc(var(--size-3) - 3px);
   position: relative;
   border-left: 1px solid var(--neutral-color);
 }
@@ -21,7 +21,7 @@
 }
 
 .nav_link + .nav_link::after {
-  left: 1rem;
+  left: var(--size-3);
 }
 
 .nav_link-current::after {

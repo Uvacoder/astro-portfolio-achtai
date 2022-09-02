@@ -1,31 +1,31 @@
 .contactCard{
-    width:var(--medium-width);
-    margin: auto;
+    width:min(100%,var(--size-fluid-10));
+    margin: var(--size-10) auto;
     background-color: var(--surface-2);
-    padding: 1rem;
+    padding: var(--size-3);
     box-shadow:var(--shadow-4);
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap:var(--size-3);
     color:var(--neutral-color);
 }
 .contactCard_title{
-    font-size: var(--fz-l);
+    font-size: var(--font-size-5);
 }
 .contactCard_list{
     list-style: none;
     display:flex;
     flex-direction:column;
-    gap:1rem;
+    gap: var(--size-3);
 }
 .contactCard_link{
     color:var(--accent-color);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--size-2);
 }
 .contactCard_icon{
     fill:var(--neutral-color);
-    height: 1rem;
-    width: 1rem;
+    height: var(--size-3);
+    width: var(--size-3);
 }
