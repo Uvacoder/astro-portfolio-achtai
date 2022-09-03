@@ -1,6 +1,7 @@
 ---
 import type { Game } from "../../api/gamesType";
 import getProjets from "../../api/getDatas";
+import CustomLink from "../../components/CustomLink";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
@@ -24,7 +25,7 @@ const datas = projetsDatas.find(el=>el.title===projet)!
     <div class="projectResume">
       <h2 class="projectResume_title">{datas.title}</h2>
       <img src={datas.cover_url} width="315" height="250" class="projectResume_img" aria-hidden="true"/>
-      <a href={datas.url} target="_blank" class="projectResume_link">{datas.classification === 'game' ? 'Jouer' : 'Visiter'}</a>
+      <CustomLink target="_blank" className="projectResume_link" href={datas.url??''} value={datas.classification === 'game' ? 'Jouer' : 'Visiter'}/>
       <p class="projectResume_description">{datas.short_text}</p>
     </div>
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import Nav from "../Nav/index.astro";
 import ThemeSwitch from "../ThemeSwitch";
+import CustomLink from "../CustomLink"
 export interface Props {
   pageCategory: string;
 }
@@ -10,8 +11,8 @@ const { pageCategory } = Astro.props as Props;
 
 <header class="header">
   <ThemeSwitch client:load />
-  <a href="/" class="header_link">
-    <h1 class="header_title">Achtaitaipai</h1>
-  </a>
+  <h1 class="header_title">
+    <CustomLink href ="/" value="Achtaitaipai" className="header_link"/>
+  </h1>
   <Nav currentPage={pageCategory} />
 </header>

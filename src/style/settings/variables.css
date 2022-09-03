@@ -2,7 +2,7 @@
   --surface-1-light: var(--gray-0);
   --surface-2-light: var(--gray-2);
   --neutral-color-light: var(--gray-9);
-  --accent-color-light: var(--indigo-9);
+  --accent-color-light: var(--blue-9);
   --warning-color-light: var(--red-9);
   --surface-shadow-light: 200 10% 20%;
   --shadow-strength-light: 2%;
@@ -10,7 +10,7 @@
   --surface-1-dark: var(--gray-9);
   --surface-2-dark: var(--gray-8);
   --neutral-color-dark: var(--gray-3);
-  --accent-color-dark: var(--indigo-3);
+  --accent-color-dark: var(--blue-3);
   --warning-color-dark: var(--red-3);
   --surface-shadow-dark: 200 50% 3%;
   --shadow-strength-dark: 80%;
