@@ -10,9 +10,9 @@ const { pageCategory } = Astro.props as Props;
 ---
 
 <header class="header">
-  <ThemeSwitch client:load />
   <h1 class="header_title">
     <CustomLink href ="/" value="Achtaitaipai" className="header_link"/>
   </h1>
   <Nav currentPage={pageCategory} />
+  <ThemeSwitch client:load />
 </header>

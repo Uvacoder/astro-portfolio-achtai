@@ -10,8 +10,6 @@
   background: none;
   color: var(--neutral-color);
   border: 0;
-  outline: 0;
-  cursor: 0;
   cursor: pointer;
 }
 

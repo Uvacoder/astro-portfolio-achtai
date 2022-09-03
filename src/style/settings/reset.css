@@ -1,16 +1,28 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font: inherit;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
 }
 
-a{
-	text-decoration: none;
-	color:inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
-	font-family:var(--font-mono);
-	background-color: var(--surface-1);
+  font-family: var(--font-mono);
+  background-color: var(--surface-1);
+}
+
+:where(a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])){
+    outline-offset: 0;
+	outline-color: transparent;
+}
+
+:where(a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])):where(:focus-visible:not(:active)){
+    outline-offset: 0;
+    outline:2px solid var(--border-color);
+    outline-offset: var(--size-1);
+    transition: outline .3s , outline-offset .3s;
 }

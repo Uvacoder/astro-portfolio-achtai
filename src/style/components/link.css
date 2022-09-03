@@ -1,6 +1,7 @@
 .link{
     position: relative;
 }
+
 .link:hover .link_letter{
     animation: var(--animation-shake-y) .2s;
     animation-delay: calc(0.07s * var(--_index));

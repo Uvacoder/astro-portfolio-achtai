@@ -1,8 +1,16 @@
-.nav_link + .nav_link {
-  padding-left: var(--size-3);
-  margin-left: calc(var(--size-3) - 3px);
-  position: relative;
-  border-left: 1px solid var(--neutral-color);
+.nav_link + .nav_link::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--size-3));
+  width: 1px;
+  height: 100%;
+  background-color:var(--neutral-color);
+  font-size: var(--font-size-2);
+}
+
+.nav{
+  display: flex;
+  gap:var(--size-6)
 }
 
 .nav_link {
@@ -20,9 +28,6 @@
   transform: scaleX(0);
 }
 
-.nav_link + .nav_link::after {
-  left: var(--size-3);
-}
 
 .nav_link-current::after {
   animation: underlineNavLinkAnim .2s forwards;

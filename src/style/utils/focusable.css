@@ -1,0 +1,10 @@
+.focusable{
+    position: relative;
+    outline-offset: 0;
+}
+
+.focusable:focus{
+    outline:2px solid var(--accent-color);
+    outline-offset: var(--size-1);
+    transition: outline-offset .3s;
+}

@@ -36,7 +36,7 @@ export default function ThemeSwitch() {
   return (
     <button
       className="themeSwitch"
-      title="Toggles dark theme"
+      title={isDark?"Activer le thème jour": "Activer le thème nuit"}
       role="switch"
       aria-checked={isDark}
       onClick={handleChange}

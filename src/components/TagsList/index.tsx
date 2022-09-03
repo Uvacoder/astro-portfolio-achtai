@@ -23,7 +23,7 @@ export default function TagList() {
             role="switch"
             aria-checked={el.active}
             onClick={() => handleClick(el.name)}
-            title={'filters '+el.name}
+            title={el.active?"Afficher les projets de type "+el.name:"N'afficher que les projets de type "+el.name}
           >
             {el.name}
           </button>
