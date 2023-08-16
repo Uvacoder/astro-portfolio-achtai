@@ -15,7 +15,7 @@
     "@astrojs/preact": "^1.0.2",
     "@types/react": "^18.0.18",
     "astro": "^1.0.9",
-    "astro-compress": "^1.0.6",
+    "astro-compress": "^2.0.12",
     "open-props": "^1.4.14",
     "postcss-jit-props": "^1.0.7",
     "preact": "^10.6.5"
